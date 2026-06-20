@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Situs Resmi SMK Manunggal Cibinong - Yayasan Pendidikan Islam Al-Huda Cibinong. Menyelenggarakan program kejuruan RPL, TKJ, Multimedia, Akuntansi, Administrasi Perkantoran, dan Pemasaran.">
+    <title>SMK Manunggal Cibinong - Yayasan Pendidikan Islam Al-Huda</title>
+    
+    <!-- Content Security Policy to protect against Clickjacking and XSS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; media-src 'self'; script-src 'self' 'unsafe-inline';">
+    
+    <!-- Google Fonts: Plus Jakarta Sans (Modern & Clean Geometric) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #3b82f6; /* Modern Blue */
+            --primary-dark: #1d4ed8;
+            --accent: #f59e0b; /* Amber Gold */
+            --text-main: #0f172a; /* Slate 900 */
+            --text-muted: #64748b; /* Slate 500 */
+            --bg-body: #ffffff;
+            --bg-section: #f8fafc; /* Slate 50 */
+            --border-light: #f1f5f9; /* Slate 100 */
+            --border-main: #e2e8f0; /* Slate 200 */
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-subtle: 0 4px 30px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Announcement Info Bar */
+        .info-bar {
+            background-color: #0b0f19;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            padding: 0.6rem 2rem;
+            font-weight: 500;
+        }
+
+        .info-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-bar-contacts {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .info-bar-contacts span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #cbd5e1;
+        }
+
+        .info-bar-contacts svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--primary);
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--primary);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Hamburger Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: var(--text-main);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: radial-gradient(100% 100% at 50% 0%, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            padding: 6rem 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            color: var(--primary);
+            background-color: rgba(59, 130, 246, 0.06);
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h2 span {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 2.25rem;
+            max-width: 580px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-main);
+            color: var(--text-main);
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-section);
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image - Modern Rounded Frame with Glass Tag */
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            transition: var(--transition);
+            display: flex;
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-lg);
+            pointer-events: none;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Floating Badge */
+        .floating-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            z-index: 10;
+        }
+
+        .badge-medal {
+            background-color: var(--accent);
+            color: #000;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .badge-text h5 {
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .badge-text p {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        /* General Section Grid */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4.5rem auto;
+        }
+
+        .section-header h3 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Profile Section */
+        .profile {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: flex-start;
+        }
+
+        .profile-content h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 1.25rem;
+        }
+
+        .profile-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Vision & Mission Cards */
+        .vision-mission-card {
+            background-color: var(--bg-section);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .vision-block {
+            margin-bottom: 2rem;
+        }
+
+        .vision-mission-card h5 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .vision-block p {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .mission-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .mission-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .mission-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+
+        /* Modern Grid Stats */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Video Showcase Section */
+        .video-section {
+            background-color: var(--bg-section);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .video-card {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--border-main);
+        }
+
+        .video-frame {
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-frame video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .video-info {
+            padding: 1.75rem;
+        }
+
+        .video-info h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .video-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Majors (Jurusan) Section */
+        .majors {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .majors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .major-card {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2.25rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .major-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .major-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-sm);
+            background-color: rgba(59, 130, 246, 0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .major-card:hover .major-icon {
+            background-color: var(--primary);
+        }
+
+        .major-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--primary);
+            transition: var(--transition);
+        }
+
+        .major-card:hover .major-icon svg {
+            fill: white;
+        }
+
+        .major-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .major-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Contact & Admisi Section */
+        .contact-section {
+            background-color: var(--bg-section);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4.5rem;
+        }
+
+        .form-card {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .form-card h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: var(--bg-section);
+            border: 1px solid var(--border-main);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-family);
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: var(--bg-body);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.9rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+        }
+
+        .form-feedback {
+            margin-top: 1.25rem;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: none;
+        }
+
+        .form-feedback.success {
+            display: block;
+            background-color: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .contact-info-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 2.25rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .info-box h4 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .info-list li strong {
+            color: var(--text-main);
+        }
+
+        .info-list svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .map-box {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            flex-grow: 1;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-muted);
+        }
+
+        .map-box svg {
+            width: 38px;
+            height: 38px;
+            fill: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 3.5rem 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            font-size: 1.15rem;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1024px) {
+            .hero-container, .profile-grid, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+            .hero-content {
+                padding-right: 0;
+                text-align: center;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .hero-image-wrapper {
+                max-width: 580px;
+                margin: 0 auto;
+            }
+            .video-grid, .majors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .info-bar {
+                display: none;
+            }
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-body);
+                border-bottom: 1px solid var(--border-light);
+                padding: 1.5rem;
+                gap: 1.25rem;
+                box-shadow: var(--shadow-hover);
+            }
+            nav.active {
+                display: flex;
+            }
+            .hero h2 {
+                font-size: 2.35rem;
+            }
+            .video-grid, .majors-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .form-card {
+                padding: 2rem;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="info-bar">
+        <div class="info-bar-container">
+            <div class="info-bar-contacts">
+                <span>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                    </svg>
+                    (021) 8753288
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                    </svg>
+                    smkmanunggal.43cb@gmail.com
+                </span>
+            </div>
+            <div>
+                <span>Yayasan Al-Huda Cibinong &bull; Akreditasi B</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L1 9L12 15L21 10V17H23V9L12 3Z"/>
+                    <path d="M5 12.5V17C5 18.1 8.13 19 12 19C15.87 19 19 18.1 19 17V12.5L12 16.5L5 12.5Z"/>
+                </svg>
+                <div class="logo-text">
+                    <h1>SMK Manunggal</h1>
+                    <p>YAYASAN AL-HUDA CIBINONG</p>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menu-btn" aria-label="Navigasi Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="nav-menu">
+                <a href="#beranda">Beranda</a>
+                <a href="#profil">Profil</a>
+                <a href="#galeri">Galeri Video</a>
+                <a href="#jurusan">Program Keahlian</a>
+                <a href="#kontak" class="btn-cta">Daftar Konsultasi</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">Tahun Ajaran 2026/2027</div>
+                <h2>Mendidik Generasi <span>Berkarakter & Siap Kerja</span></h2>
+                <p>
+                    Selamat datang di situs resmi SMK Manunggal Cibinong. Bersama Yayasan Pendidikan Islam Al-Huda Cibinong, kami mendidik putra-putri bangsa menjadi lulusan yang kompeten di bidangnya, berintegritas tinggi, dan siap diserap oleh dunia usaha dan industri.
+                </p>
+                <div class="hero-btns">
+                    <a href="#kontak" class="btn-primary">Hubungi Kami</a>
+                    <a href="#profil" class="btn-secondary">Pelajari Profil</a>
+                </div>
+            </div>
+            <!-- Asymmetrical Hero Image Frame with Glassmorphic Floating Badge -->
+            <div class="hero-image-wrapper">
+                <img src="image.png" alt="Gedung Kampus SMK Manunggal Cibinong Yayasan Al Huda" id="school-main-image">
+                <div class="floating-badge">
+                    <div class="badge-medal">B</div>
+                    <div class="badge-text">
+                        <h5>Terakreditasi B</h5>
+                        <p>Kelayakan Standar BAN-S/M</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Profile (Profil Sekolah) Section -->
+    <section id="profil" class="profile">
+        <div class="section-header">
+            <h3>Profil Sekolah</h3>
+            <p>Mengenal visi, misi, serta komitmen Yayasan Al-Huda dalam mengelola SMK Manunggal Cibinong</p>
+        </div>
+
+        <div class="profile-grid">
+            <div class="profile-content">
+                <h4>Yayasan Pendidikan Islam Al-Huda</h4>
+                <p>
+                    Yayasan Pendidikan Islam Al-Huda Cibinong merupakan yayasan pendidikan sosial keagamaan yang berpusat di Pabuaran, Cibinong. Kami berkomitmen menyelenggarakan kegiatan pendidikan kejuruan bermutu untuk menyiapkan generasi mandiri yang siap bersaing secara global.
+                </p>
+                <p>
+                    SMK Manunggal Cibinong hadir sebagai salah satu wujud nyata komitmen tersebut. Menggunakan kurikulum berbasis kompetensi industri dan dibekali sarana praktek yang memadai, kami memadukan penguasaan kompetensi praktis dengan pembentukan akhlak mulia dalam pembelajaran sehari-hari.
+                </p>
+            </div>
+
+            <div>
+                <div class="vision-mission-card">
+                    <div class="vision-block">
+                        <h5>Visi</h5>
+                        <p>"Menjadi sekolah menengah kejuruan yang unggul, menghasilkan lulusan berkarakter Islami, kompeten di bidangnya, dan berdaya saing di dunia kerja."</p>
+                    </div>
+                    
+                    <div>
+                        <h5>Misi</h5>
+                        <ul class="mission-list">
+                            <li>Menyelenggarakan proses pembelajaran kejuruan yang relevan dengan kebutuhan dunia usaha dan industri.</li>
+                            <li>Menanamkan kebiasaan dan akhlak mulia sesuai nilai-nilai Islami dalam keseharian sekolah.</li>
+                            <li>Meningkatkan kualitas guru serta kelengkapan sarana laboratorium praktek kerja secara berkala.</li>
+                            <li>Membangun kemitraan kuat dengan industri guna penyaluran lulusan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modern Clean Stats -->
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-num">6</div>
+                <div class="stat-label">Program Keahlian</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">B</div>
+                <div class="stat-label">Akreditasi BAN-S/M</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Kurikulum Berbasis Kerja</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase (Galeri Video) Section -->
+    <section id="galeri" class="video-section">
+        <div class="video-container">
+            <div class="section-header">
+                <h3>Galeri Video Kegiatan</h3>
+                <p>Dokumentasi aktivitas praktikum, lingkungan kelas, dan sarana penunjang pembelajaran kami</p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" id="video-1">
+                            <source src="WhatsApp Video 2026-06-20 at 15.52.27.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag pemutar video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h4>Profil Lingkungan Sekolah</h4>
+                        <p>Melihat sekilas tata ruang, area luar gedung, dan suasana kondusif di SMK Manunggal Cibinong.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" id="video-2">
+                            <source src="WhatsApp Video 2026-06-20 at 15.52.27 (1).mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag pemutar video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h4>Aktivitas Belajar & Praktikum</h4>
+                        <p>Dokumentasi interaksi siswa di laboratorium praktek kejuruan serta suasana ruang kelas saat kegiatan pembelajaran.</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" id="video-3">
+                            <source src="WhatsApp Video 2026-06-20 at 15.52.28.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag pemutar video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h4>Fasilitas Lengkap Sekolah</h4>
+                        <p>Tour lengkap sarana penunjang akademis seperti lab komputer, lapangan olahraga, perpustakaan, dan area ibadah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Keahlian (Jurusan) Section -->
+    <section id="jurusan" class="majors">
+        <div class="section-header">
+            <h3>Program Keahlian</h3>
+            <p>Pilih jurusan kompetensi keahlian yang sesuai dengan bakat dan minat masa depan Anda</p>
+        </div>
+
+        <div class="majors-grid">
+            <!-- RPL -->
+            <div class="major-card">
+                <div class="major-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z"/>
+                    </svg>
+                </div>
+                <h4>Rekayasa Perangkat Lunak (RPL)</h4>
+                <p>Mempelajari rekayasa piranti lunak, algoritma pemrograman, pengembangan aplikasi mobile & web, serta pengelolaan database.</p>
+            </div>
+
+            <!-- TKJ -->
+            <div class="major-card">
+                <div class="major-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4ZM4 6V18H20V6H4ZM12 8C13.1 8 14 8.9 14 10C14 11.1 13.1 12 12 12C10.9 12 10 11.1 10 10C10 8.9 10.9 8 12 8ZM12 14C14.7 14 20 15.3 20 18H4C4 15.3 9.3 14 12 14Z"/>
+                    </svg>
+                </div>
+                <h4>Teknik Komputer Jaringan (TKJ)</h4>
+                <p>Penguasaan administrasi sistem jaringan, konfigurasi server, manajemen routing & switching, serta keamanan sistem komputer.</p>
+            </div>
+
+            <!-- Multimedia -->
+            <div class="major-card">
+                <div class="major-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12S7.6 4 12 4 20 7.6 20 12 16.4 20 12 20ZM11 7H13V13H11V7ZM11 15H13V17H11V15Z"/>
+                    </svg>
+                </div>
+                <h4>Desain Multimedia / DKV</h4>
+                <p>Mengembangkan keterampilan dalam videografi, fotografi, editing video digital, animasi 2D/3D, dan desain komunikasi visual.</p>
+            </div>
+
+            <!-- Akuntansi -->
+            <div class="major-card">
+                <div class="major-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3H19 3ZM19 19H5V5H19V19ZM7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z"/>
+                    </svg>
+                </div>
+                <h4>Akuntansi & Keuangan</h4>
+                <p>Membekali siswa kemampuan siklus keuangan akuntansi, perpajakan, audit internal, dan penggunaan software akuntansi.</p>
+            </div>
+
+            <!-- AP -->
+            <div class="major-card">
+                <div class="major-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20ZM9 12H15V14H9V12ZM9 16H15V18H9V16Z"/>
+                    </svg>
+                </div>
+                <h4>Administrasi Perkantoran</h4>
+                <p>Mempelajari tata kearsipan, korespondensi surat-menyurat bisnis, keprotokolan perkantoran, dan manajemen operasional kantor.</p>
+            </div>
+
+            <!-- Pemasaran -->
+            <div class="major-card">
+                <div class="major-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V8H20V18ZM20 6H4V5H20V6ZM16 11V13H8V11H16Z"/>
+                    </svg>
+                </div>
+                <h4>Bisnis Digital & Pemasaran</h4>
+                <p>Menguasai administrasi ritel, manajemen penjualan, strategi pemasaran digital (E-Commerce), periklanan media sosial, dan hubungan pelanggan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Registration & Contact Section -->
+    <section id="kontak" class="contact-section">
+        <div class="contact-container">
+            <!-- Form Card -->
+            <div class="form-card">
+                <h4>Konsultasi Admisi Online</h4>
+                <p>Silakan isi formulir konsultasi ini. Petugas humas sekolah kami akan menghubungi Anda kembali dalam waktu maksimal 1x24 jam.</p>
+                
+                <form id="admission-form">
+                    <div class="form-group">
+                        <label for="student-name">Nama Calon Siswa</label>
+                        <input type="text" id="student-name" placeholder="Masukkan nama lengkap pendaftar" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="student-email">Alamat Email Aktif</label>
+                            <input type="email" id="student-email" placeholder="contoh@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-phone">Nomor WhatsApp Aktif</label>
+                            <input type="tel" id="student-phone" placeholder="Contoh: 0812xxxxxxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="program-choice">Rencana Jurusan Pilihan</label>
+                        <select id="program-choice" required>
+                            <option value="">-- Silakan Pilih Jurusan --</option>
+                            <option value="RPL">Rekayasa Perangkat Lunak (RPL)</option>
+                            <option value="TKJ">Teknik Komputer Jaringan (TKJ)</option>
+                            <option value="Multimedia">Desain Multimedia / DKV</option>
+                            <option value="Akuntansi">Akuntansi & Keuangan</option>
+                            <option value="AP">Administrasi Perkantoran</option>
+                            <option value="Pemasaran">Bisnis Digital & Pemasaran</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-message">Catatan / Pertanyaan Tambahan</label>
+                        <textarea id="student-message" placeholder="Tuliskan pertanyaan Anda mengenai biaya masuk, jadwal tes, beasiswa, atau kebutuhan lainnya..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Kirim Formulir Konsultasi</button>
+                    <div class="form-feedback" id="feedback-alert"></div>
+                </form>
+            </div>
+
+            <!-- Contact Panel -->
+            <div class="contact-info-panel">
+                <div class="info-box">
+                    <h4>Pusat Informasi & Kontak</h4>
+                    <ul class="info-list">
+                        <li>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
+                            </svg>
+                            <span><strong>Alamat:</strong> Jl. Raya Jakarta-Bogor KM. 43, Kel. Pabuaran, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16916</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                            </svg>
+                            <span><strong>Telepon Humas:</strong> (021) 8753288 / 0813-1689-2472</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                            <span><strong>Email:</strong> smkmanunggal.43cb@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Map Info Box -->
+                <div class="map-box">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.5 3l-.01.03-3.99 3.01L12 4 7.5 6.03 3.5 4H3v15c0 .55.45 1 1 1l.5-.18 3.99-3.01L12 19.5l4.5-2.03 4 2.03.5-.28V4c0-.55-.45-1-1-1zm-1.5 13.9l-3.5-1.78V5.6l3.5 1.78v9.52zM11 5.61l3 1.34v9.45l-3-1.34V5.61zM4 5.88l3.5 1.75v9.52L4 15.4V5.88z"/>
+                    </svg>
+                    <h5 style="color:var(--text-main); font-weight:800; margin-bottom:0.25rem;">Lokasi Kampus Utama</h5>
+                    <p style="font-size:0.85rem;">Jl. Raya Jakarta-Bogor KM. 43, Pabuaran, Cibinong (Dekat Perbatasan Depok-Bogor)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <a href="#" class="footer-logo">SMK MANUNGGAL CIBINONG</a>
+            <div class="footer-text">
+                &copy; 2026 Yayasan Pendidikan Islam Al-Huda Cibinong. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Safe Vanilla JavaScript Interactions -->
+    <script>
+        // Sticky Header Box Shadow Toggle
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 40) {
+                header.style.boxShadow = 'var(--shadow-hover)';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-subtle)';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+            }
+        });
+
+        // Mobile Nav Bar Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const spans = menuBtn.querySelectorAll('span');
+            spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 6px)' : 'none';
+            spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -6px)' : 'none';
+        });
+
+        // Close Menu on Link Click
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const spans = menuBtn.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // Safe Client-Side Form Submission using textContent to prevent XSS
+        const admissionForm = document.getElementById('admission-form');
+        const feedbackAlert = document.getElementById('feedback-alert');
+
+        admissionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const studentName = document.getElementById('student-name').value;
+            const programChoice = document.getElementById('program-choice');
+            const selectedText = programChoice.options[programChoice.selectedIndex].text;
+
+            // Safe DOM insertion using textContent to prevent XSS
+            feedbackAlert.replaceChildren(); // Safely clear child nodes
+            feedbackAlert.className = 'form-feedback success';
+            feedbackAlert.textContent = `Terima kasih, ${studentName}. Pengajuan konsultasi untuk program keahlian "${selectedText}" telah berhasil terkirim. Humas SMK Manunggal akan segera menghubungi Anda.`;
+
+            // Reset the form input fields safely
+            admissionForm.reset();
+        });
+    </script>
+</body>
+</html>
